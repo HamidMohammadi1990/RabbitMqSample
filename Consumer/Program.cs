@@ -9,7 +9,8 @@ var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddDbContext<PeopleDbContext>(x => 
 			    x.UseSqlServer("Data Source=.\\V19;Initial Catalog=PeopleDb;User ID=sa;Password=1;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=false"));
 
-builder.Services.AddHostedService<PeopleBackgroundService>();
+//builder.Services.AddHostedService<PeopleBackgroundService>();
+builder.Services.AddHostedService<PeopleBackgroundServiceMultiMode>();
 
 var app = builder.Build();
 
